@@ -23,10 +23,9 @@ libxslt1-dev
 memcached
 mencoder
 mingetty
-nginx-full
-nginx-extras
 ntp
 openssh-server
+nginx-full
 php5-cli
 php5-curl
 php5-dev
