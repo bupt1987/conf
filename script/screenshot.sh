@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# require: imagemagick
+# combine gif: convert -delay 10 *.png -resize 200x113 -loop 0 1.gif
+
 # 30	10,16	* * * ~/conf/script/screenshot.sh >/dev/null 2>&1
 
 DISPLAY=:0
@@ -18,6 +21,6 @@ mkdir -p `dirname $filename`
 import -window root $filename
 
 filesize=`ls -l $filename | awk '{ print $5 }' | tail -1`
-if [ $filesize -lt 400 ]; then
+if [ $filesize -lt 500 ]; then
 	rm $filename
 fi
