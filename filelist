@@ -6,10 +6,9 @@
 .inputrc
 .screenrc
 .wgetrc
-.zhengkai
-.zhengkai_alias
+.jerry
+.jerry_alias
 .axelrc
-.Xmodmap
 .fonts.conf
 .imwheelrc
 .hgrc

@@ -8,7 +8,7 @@ Host *
 	ControlMaster no 
 	ControlPath none
 	ControlPersist no
-	User zhengkai
+	User jerry
 	StrictHostKeyChecking no
 	LogLevel quiet
 	UserKnownHostsFile /dev/null

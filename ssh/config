@@ -6,7 +6,7 @@ Host *
 	CompressionLevel 9
 
 Host test
-	User zhengkai
+	User jerry
 	HostName ec2-54-251-15-186.ap-southeast-1.compute.amazonaws.com
 
 Host local_test

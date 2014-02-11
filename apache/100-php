@@ -1,7 +1,7 @@
 <VirtualHost *:81>
 
 	ServerName php
-	ServerAdmin zhengkai@gmail.com
+	ServerAdmin bupt1987@gmail.com
 
 	<Directory /www/manual/php>
 		# Do not display directory listings if index is not present,

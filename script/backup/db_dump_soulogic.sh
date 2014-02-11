@@ -1,5 +1,5 @@
 #!/bin/sh
-bakname="/home/zhengkai/backup/soulogic/db_`date +%y%m%d_%H%M`.sql.gz"
+bakname="/home/jerry/backup/soulogic/db_`date +%y%m%d_%H%M`.sql.gz"
 
 dir=`dirname $bakname`
 

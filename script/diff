@@ -73,10 +73,10 @@ index 8e2ba00..7edf6fe 100644
 +"let &t_SI = "\<Esc>]12;orange\x7"
 +"let &t_EI = "\<Esc>]12;cyan\x7"
  
-diff --git a/.zhengkai b/.zhengkai
+diff --git a/.jerry b/.jerry
 index 5a7e165..f883b16 100644
---- a/.zhengkai
-+++ b/.zhengkai
+--- a/.jerry
++++ b/.jerry
 @@ -10,8 +10,6 @@ then
  	HOST="\[\033[38;5;217m\]\h\[\033[00m\]";
  fi
