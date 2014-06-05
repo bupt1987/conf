@@ -90,6 +90,8 @@ alias tunnel_test="curl http://www.facebook.com --socks5-hostname"
 
 alias tmu='if [[ -z $TMUX && -z $TERMCAP ]]; then (tmux -2 attach -t default_login || tmux -2 new -s default_login); fi'
 
+alias cleansvn="find . -type d -iname '.svn' -exec rm -rf {} \;"
+
 ex () {
 	if [ -f $1 ] ; then
 		case $1 in
