@@ -15,7 +15,7 @@ echo `date +'%Y-%m-%d %H:%M:%S'` > /tmp/emule_rsync_run
 
 #/usr/bin/rsync --bwlimit=200 --temp-dir=/download/tmp --partial -vzrtopg -e "ssh -o TCPKeepAlive=yes -o ServerAliveInterval=30" aeon:/var/lib/mldonkey/incoming/files/ /download/emule/
 #/usr/bin/rsync --temp-dir=/www/tmp --partial -vzrtopg -e "ssh -o TCPKeepAlive=yes -o ServerAliveInterval=30" aeon:/var/lib/mldonkey/incoming/files/ /www/emule/
-#/usr/bin/rsync --temp-dir=/www/tmp --partial -vzrtopg -e "ssh -o TCPKeepAlive=yes -o ServerAliveInterval=30" aeon:/home/jerry/rtorrent/download/ /www/emule/
+#/usr/bin/rsync --temp-dir=/www/tmp --partial -vzrtopg -e "ssh -o TCPKeepAlive=yes -o ServerAliveInterval=30" aeon:/home/junjie/rtorrent/download/ /www/emule/
 
 /usr/bin/rsync --temp-dir=/share/tmp --partial -vzrtopg -e ssh garona:~/rtorrent/move/ /share/garona/
 

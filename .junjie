@@ -107,7 +107,7 @@ git_propmt_dirty() {
 
 PS1_TIME="\n\[\033[38;5;39m\]- \D{%I:%M:%S %p} -\[\033[00m\]"
 PS1_USER="\u"
-if [[ $USER != "jerry" ]];
+if [[ $USER != "junjie" ]];
 then
 	PS1_USER="\[\033[38;5;217m\]$USER\[\033[38;5;39m\]"
 fi
@@ -170,6 +170,6 @@ export LESS_TERMCAP_so=$'\E[30;48;5;32m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[38;5;117m'
 
-if [ -f ~/.jerry_alias ]; then
-    . ~/.jerry_alias
+if [ -f ~/.junjie_alias ]; then
+    . ~/.junjie_alias
 fi

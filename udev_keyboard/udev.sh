@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo -u jerry /usr/bin/xmodmap -display :0 /home/jerry/conf/.Xmodmap >/dev/null 2>&1 &
+sudo -u junjie /usr/bin/xmodmap -display :0 /home/junjie/conf/.Xmodmap >/dev/null 2>&1 &

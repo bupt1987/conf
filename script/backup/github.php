@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-$sUser = "jerry";
+$sUser = "junjie";
 $sPassword = "";
 $sBackupDir = $_SERVER["HOME"]."/backup/github/";
 

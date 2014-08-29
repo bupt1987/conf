@@ -8,7 +8,7 @@ for line in `tmux list-windows -F "#{window_index}:#{window_name}" -t $session`;
 		continue
 	fi
 	
-	cmd='/usr/bin/tmux send-keys -t '$session':'$window' C-c C-m ". ~/.jerry" C-m'
+	cmd='/usr/bin/tmux send-keys -t '$session':'$window' C-c C-m ". ~/.junjie" C-m'
 	echo $cmd | bash
 done
 

@@ -73,7 +73,7 @@ index 8e2ba00..7edf6fe 100644
 +"let &t_SI = "\<Esc>]12;orange\x7"
 +"let &t_EI = "\<Esc>]12;cyan\x7"
  
-diff --git a/.jerry b/.jerry
+diff --git a/.junjie b/.junjie
 index 5a7e165..f883b16 100644
 --- a/.jerry
 +++ b/.jerry
