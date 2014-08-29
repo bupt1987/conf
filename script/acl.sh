@@ -24,7 +24,7 @@ if [ -z "$2" ]; then
 fi
 
 if [ ! -e "$2" ]; then
-	echo 'dictionary "$2" no exists' 1>&2
+	echo 'dictionary "'$2'" no exists' 1>&2
 	exit 1
 fi
 if [ ! -d "$2" ]; then
@@ -34,6 +34,14 @@ fi
 
 echo -e "\tset acl\n\n\tgroup: "$1"\n\t  dir: "$2"\n"
 
-setfacl -R -m group:$1:rw $2
-setfacl -d -R -m group:$1:rwx $2
-find . -type d -exec setfacl -m group:$1:rwx {} \;
+cd $2
+pwd
+echo
+
+echo setfacl -d -R -m g:$1:rwx $2
+setfacl -d -R -m g:$1:rwx $2
+echo
+
+echo setfacl'    '-R -m g:$1:rwX $2
+setfacl -R -m g:$1:rwX $2
+echo
