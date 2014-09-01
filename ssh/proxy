@@ -1,2 +1,2 @@
-ssh -qTfnN -D 7070 molly
-ssh -qTfnN -D 7071 qa
+sudo -u junjie ssh -qTfnN -D 7070 molly
+sudo -u junjie ssh -qTfnN -D 7071 qa

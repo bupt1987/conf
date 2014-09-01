@@ -12,8 +12,8 @@ set -o vi
 tabs 4
 
 # Ctrl-S Ctrl-Q
-stty stop undef
-stty start undef
+#stty stop undef
+#stty start undef
 
 # 输入法
 export GTK_IM_MODULE=ibus
