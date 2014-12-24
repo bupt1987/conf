@@ -94,14 +94,7 @@ if [ -f ~/conf/inc/bashmarks/bashmarks.sh ]; then
 	. ~/conf/inc/bashmarks/bashmarks.sh
 fi
 
-export GOROOT=$HOME/go
-export GOARCH=amd64
-export GOOS=linux
-export GOPATH="/go"
 export PATH="/usr/local/bin:/usr/bin:/bin:/sbin:$GOROOT/bin:/go/bin"
-
-set HTTP_PROXY=localhost:8118
-set HTTPS_PROXY=localhost:8118
 
 case "$SSH_TTY" in
 /dev/pts*)
