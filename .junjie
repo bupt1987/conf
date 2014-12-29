@@ -94,7 +94,7 @@ if [ -f ~/conf/inc/bashmarks/bashmarks.sh ]; then
 	. ~/conf/inc/bashmarks/bashmarks.sh
 fi
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/sbin:$GOROOT/bin:/go/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/sbin"
 
 case "$SSH_TTY" in
 /dev/pts*)
