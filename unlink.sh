@@ -6,11 +6,11 @@ echo ${dir}/list
 
 for file in ${list[@]}
 do
-	if [ ! -f ~/${file} ]; then
-		ln -s -f ${dir}/${file} ~/${file}
+	if [ -f ~/${file} ]; then
+		rm ~/${file}
 	fi
 done
 
-if [ ! -d ~/.tmp ]; then
-	mkdir ~/.tmp
+if [ -d ~/.tmp ]; then
+	rm -fr ~/.tmp
 fi
