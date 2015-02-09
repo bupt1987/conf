@@ -71,7 +71,10 @@ git_propmt_dirty() {
 
 PS1_TIME="\n\[\033[38;5;39m\]- \D{%I:%M:%S %p} -\[\033[00m\]"
 PS1_USER="\u"
-if [[ $USER != "junjie" ]];
+
+REAL_USER=`cat ~/conf/user`
+
+if [[ $USER != $REAL_USER ]];
 then
 	PS1_USER="\[\033[38;5;217m\]$USER\[\033[38;5;39m\]"
 fi
@@ -132,6 +135,6 @@ export LESS_TERMCAP_so=$'\E[30;48;5;32m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[38;5;117m'
 
-if [ -f ~/.junjie_alias ]; then
-    . ~/.junjie_alias
+if [ -f ~/.bash_user_alias ]; then
+    . ~/.bash_user_alias
 fi

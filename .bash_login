@@ -2,8 +2,8 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
-if [ -f ~/.junjie ]; then
-    . ~/.junjie
+if [ -f ~/..bash_init ]; then
+    . ~/..bash_init
 fi
 
 if [ -f ~/.bash_funplus ]; then

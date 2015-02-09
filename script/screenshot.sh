@@ -7,7 +7,7 @@
 
 DISPLAY=:0
 export DISPLAY
-HOME=/home/junjie
+HOME=/home/${USER}
 export HOME
 
 save_dir=$HOME'/Pictures/shot/'

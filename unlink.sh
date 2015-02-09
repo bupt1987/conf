@@ -11,6 +11,8 @@ do
 	fi
 done
 
+rm ${dir}/user
+
 if [ -d ~/.tmp ]; then
 	rm -fr ~/.tmp
 fi
