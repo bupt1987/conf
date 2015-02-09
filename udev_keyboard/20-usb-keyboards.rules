@@ -1,1 +1,1 @@
-ACTION=="add", ATTRS{idVendor}=="1006", ATTRS{idProduct}=="0022", RUN+="/home/junjie/conf/udev_keyboard/udev.sh", OWNER="jerry"
+ACTION=="add", ATTRS{idVendor}=="1006", ATTRS{idProduct}=="0022", RUN+="~/conf/udev_keyboard/udev.sh", OWNER="jerry"
