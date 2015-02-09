@@ -11,8 +11,6 @@ do
 	fi
 done
 
-echo ${USER} > ${dir}/user
-
 if [ ! -d ~/.tmp ]; then
 	mkdir ~/.tmp
 fi

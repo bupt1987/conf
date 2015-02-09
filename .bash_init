@@ -72,12 +72,6 @@ git_propmt_dirty() {
 PS1_TIME="\n\[\033[38;5;39m\]- \D{%I:%M:%S %p} -\[\033[00m\]"
 PS1_USER="\u"
 
-REAL_USER=`cat ~/conf/user`
-
-if [[ $USER != $REAL_USER ]];
-then
-	PS1_USER="\[\033[38;5;217m\]$USER\[\033[38;5;39m\]"
-fi
 PS1_HOST="\[\033[38;5;39m\]$PS1_USER@$PS1_HOST"
 PS1_PWD="\[\033[1;38;5;39m\]\w\[\033[00m\]"
 
