@@ -14,10 +14,10 @@ tmux_init(){
 	${tmux} send-keys "ifstat" C-m
 
 	${tmux} select-pane -t 1
-	${tmux} send-keys "htop" C-m
+	${tmux} send-keys "top" C-m
 
 	${tmux} select-pane -t 2
-	${tmux} send-keys "tail -f /tmp/php_error.txt" C-m
+	${tmux} send-keys "terror" C-m
 
 	${tmux} -2 attach -t ${name}
 }
