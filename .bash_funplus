@@ -1,5 +1,5 @@
 alias gethost='ssh deploy "php /mnt/deploy/gethost.php"'
-
+alias log_status="~/conf/script/tmux_status.sh"
 fssh() {
 	arg=($@)
 	unset arg[0]
