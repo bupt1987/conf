@@ -21,14 +21,6 @@
 # 
 # m h  dom mon dow   command
 
-#*/5  *  * * * ~/script/emule_sync.sh >/dev/null 2>&1 
-#*/5  *  * * * ~/script/clean_emule.php >/dev/null 2>&1 
-#03   21  * * * ~/script/php.manual.sh >/dev/null 2>&1 
-
-#*    */2    * * * /www/cps/cron/user_convert.php >/dev/null 2>&1 
-#*    */2    * * * /www/cps/cron/live_count.php >/dev/null 2>&1 
-
-#*/12 *    * * * /www/game/cron/flickr.php >/dev/null 2>&1 
-
-# */5 *  * * *  /usr/bin/php /www/game/cron/db_structure_dump.php >/dev/null 2>&1
-
+0 * * * * cd /www/royal/code/ && git remote prune origin
+30 * * * * cd /www/royal/flash/ && svn up
+45 * * * * cd /www/royal/flash1/ && svn up
