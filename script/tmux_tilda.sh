@@ -1,7 +1,7 @@
 #!/bin/bash
 
 name='tilda'
-window_num=6
+window_num=10
 tmux='/usr/bin/tmux'
 
 if [ not $($tmux has-session -t $name 2>/dev/null) ] ; then
