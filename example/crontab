@@ -21,6 +21,6 @@
 # 
 # m h  dom mon dow   command
 
-0 * * * * cd /www/royal/code/ && git remote prune origin
-30 * * * * cd /www/royal/flash/ && svn up
-45 * * * * cd /www/royal/flash1/ && svn up
+0 * * * * cd /www/royal && git remote prune origingit
+30 * * * * cd /www/royal_flash_online && svn up
+45 * * * * cd /www/royal_flash_debug && svn up
