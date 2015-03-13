@@ -9,8 +9,7 @@ samba
 gnome-exe-thumbnailer
 moc
 python-gpgme
-virtualbox
-virtualbox-guest-additions-iso 
 vde2
 xclip
 openjdk-7-jdk
+autojump

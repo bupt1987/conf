@@ -35,6 +35,8 @@ alias gs='git st'
 alias gc='git co'
 alias gm='git merge --no-ff'
 
+alias j="autojump"
+
 alias ls="ls --color=auto"
 alias ll="ls -lh"
 alias la="ls -lA"
