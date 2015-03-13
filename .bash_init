@@ -132,3 +132,7 @@ export LESS_TERMCAP_us=$'\E[38;5;117m'
 if [ -f ~/.bash_user_alias ]; then
     . ~/.bash_user_alias
 fi
+
+if [ -f /usr/share/autojump/autojump.bash ]; then
+    . /usr/share/autojump/autojump.bash
+fi
