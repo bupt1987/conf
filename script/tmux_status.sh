@@ -11,13 +11,13 @@ tmux_init(){
 	${tmux} split-window -h
 
 	${tmux} select-pane -t 0
-	${tmux} send-keys "ssh julia './calc_ram.php && tail -f /www/julia.txt'" C-m
+	${tmux} send-keys "ssh julia './calc_ram.php && tail -F /www/run_script_log/*'" C-m
 
 	${tmux} select-pane -t 1
-	${tmux} send-keys "ssh sonia './calc_ram.php && tail -f /www/sonia.log'" C-m
+	${tmux} send-keys "ssh sonia './calc_ram.php && tail -F /www/run_script_log/*'" C-m
 
 	${tmux} select-pane -t 2
-	${tmux} send-keys "ssh nova 'tail -f /www/clean_log.log'" C-m
+	${tmux} send-keys "ssh nova 'tail -F /www/clean_log.log'" C-m
 
 	${tmux} -2 attach -t ${name}
 }

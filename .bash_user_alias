@@ -15,6 +15,8 @@ alias apt-cache="sudo apt-cache"
 alias wondershaper="sudo wondershaper"
 alias iotop="sudo iotop"
 
+alias fuck='$(thefuck $(fc -ln -1))'
+
 alias syslog="sudo service syslog-ng"
 
 alias getbt="php ~/conf/script/bt.php"
