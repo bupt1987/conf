@@ -1,2 +1,4 @@
 sudo -u junjie ssh -qTfnN -D 7070 molly
 sudo -u junjie ssh -qTfnN -D 7071 qa
+
+sudo -u junjie autossh -qTfnNC -F /home/junjie/.ssh/tunnel_config -R 52888:127.0.0.1:22 qa >/dev/null 2>&1 &

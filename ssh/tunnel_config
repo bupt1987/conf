@@ -1,0 +1,18 @@
+Host *
+    ServerAliveCountMax 3
+    ServerAliveInterval 30
+    ExitOnForwardFailure yes
+    Compression yes
+    CompressionLevel 9
+    GSSAPIAuthentication no
+    ControlMaster no
+    ControlPath none
+    ControlPersist no
+    User zhengkai
+    StrictHostKeyChecking no
+    LogLevel quiet
+    UserKnownHostsFile /dev/null
+    PasswordAuthentication no
+
+Host qa
+	HostName 54.179.169.216
