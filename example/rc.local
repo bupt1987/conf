@@ -25,7 +25,8 @@
 #/usr/bin/svnserve --listen-host 10.0.2.15 --listen-port 3691 -r /svn -d &
 
 
-sudo -u junjie ssh -qTfnN -D 7070 qa
+sudo -u junjie ssh -qTfnN -D 7070 qa >/dev/null 2>&1 &
+sudo -u junjie autossh -qTfnNC -R 55555:127.0.0.1:22 molly >/dev/null 2>&1 &
 
 touch /tmp/php-error.txt
 chmod 666 /tmp/php-error.txt
