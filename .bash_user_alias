@@ -20,7 +20,6 @@ alias fuck='$(thefuck $(fc -ln -1))'
 alias syslog="sudo service syslog-ng"
 
 alias getbt="php ~/conf/script/bt.php"
-alias rm="trash-put"
 
 alias ..='cd ..'
 
