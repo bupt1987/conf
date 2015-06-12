@@ -12,6 +12,7 @@
 	po = push origin
 	ps = push
 	pl = pull
+	pa = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
 
 [color]
 	ui = true
@@ -45,6 +46,7 @@
 
 [core]
 	safecrlf = true
+	attributesfile = ~/.gitattributes
 
 [http]
 #	proxy = socks5://127.0.0.1:55777

@@ -2,6 +2,7 @@
 .curlrc
 .siegerc
 .gitconfig
+.gitmodules
 .inputrc
 .screenrc
 .wgetrc
