@@ -1,3 +1,5 @@
+[ -z "$PS1" ] && return
+
 #export TERM=linux
 #export TERM=xterm
 export TERM=xterm-256color
