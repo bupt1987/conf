@@ -7,7 +7,7 @@ start()
 {
     fpms=`ps aux | grep -i "php-fpm" | grep -v grep | awk '{print $2}'`
     if [ ! -n "$fpms" ]; then
-        /usr/local/opt/php55/sbin/php-fpm --fpm-config /usr/local/etc/php/5.5/php-fpm.conf &
+        /usr/local/opt/php55/sbin/php-fpm --fpm-config /usr/local/etc/php/5.5/php-fpm.conf > /dev/null &
 	echo "PHP-FPM Start"
     else
         echo "PHP-FPM Already Start"
