@@ -15,5 +15,6 @@ alias grep='grep -n -I --color=always --exclude-dir=.hg --exclude-dir=.git --exc
 alias less='less -r'
 alias pss="ps aux | grep"
 alias phpfpm="~/conf/script/mac_fpm.sh"
+alias docker-start="bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh' && eval \"$(docker-machine env default)\""
 alias http_proxy="ssh -qTfnN -D 7070 qa"
 alias terror="sudo touch /tmp/php-error.txt;sudo chmod 666 /tmp/php-error.txt;tail -F /tmp/php-error.txt"
