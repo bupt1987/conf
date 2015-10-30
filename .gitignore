@@ -3,7 +3,7 @@
 .vim/.netrwhist
 *.swp
 *~
-
+.DS_Store
 .idea/
 user
 nohup.out
