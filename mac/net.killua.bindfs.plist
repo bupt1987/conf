@@ -2,19 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>KeepAlive</key>
-  <flase/>
   <key>Label</key>
   <string>net.killua.bindfs</string>
   <key>ProgramArguments</key>
   <array>
-    <string>/usr/local/bin/bindfs</string>
-    <string>/www</string>
-    <string>~/www</string>
+    <!-- here is the important thing -->
+    <string>sh</string>
+    <string>-c</string>
+    <string>sh -c "~/conf/script/mac_bindfs 2>/tmp/bindfs.err > /tmp/bindfs.log"</string>
   </array>
   <key>RunAtLoad</key>
   <true/>
-  <key>WorkingDirectory</key>
-  <string>/www</string>
 </dict>
 </plist>

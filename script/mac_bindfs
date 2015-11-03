@@ -1,2 +1,4 @@
 #!/bin/sh
-bindfs /www ~/www
+/usr/local/bin/bindfs /www ~/www
+echo 'success'
+
