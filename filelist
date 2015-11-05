@@ -3,6 +3,7 @@
 .siegerc
 .gitconfig
 .gitmodules
+.gitattributes
 .inputrc
 .screenrc
 .wgetrc

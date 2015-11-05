@@ -1,0 +1,5 @@
+.gitconfig
+.gitmodules
+.gitattributes
+.my.cnf
+.bash_user_alias

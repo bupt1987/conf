@@ -17,10 +17,10 @@ start()
 stop()
 {
     fpms=`ps aux | grep -i "php-fpm" | grep -v grep | awk '{print $2}'`
-    echo $fpms | xargs kill -9
+    echo ${fpms} | xargs kill -9
  
-    for pid in $fpms; do
-        if echo $pid | egrep -q '^[0-9]+$'; then
+    for pid in ${fpms}; do
+        if echo ${pid} | egrep -q '^[0-9]+$'; then
             echo "PHP-FPM Pid $pid Kill"
         else
             echo "$pid IS Not A PHP-FPM Pid"
@@ -28,7 +28,7 @@ stop()
     done
 }
  
-case $param in
+case ${param} in
     'start')
         start;;
     'stop')

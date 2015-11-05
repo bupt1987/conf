@@ -1,0 +1,39 @@
+#! /bin/sh
+#
+# PHP configure
+
+'./configure' \
+'--prefix=/usr' \
+'--disable-short-tags' \
+'--disable-all' \
+'--disable-cgi' \
+'--enable-fpm' \
+'--with-fpm-user=www-data' \
+'--with-fpm-group=www-data' \
+'--mandir=/usr/share/man' \
+'--enable-session' \
+'--enable-json' \
+'--enable-filter' \
+'--enable-calendar' \
+'--enable-bcmath' \
+'--enable-sockets' \
+'--enable-mbstring' \
+'--with-iconv' \
+'--with-curl' \
+'--with-mcrypt' \
+'--with-mhash' \
+'--with-gmp' \
+'--with-readline' \
+'--with-gettext' \
+'--with-zlib' \
+'--enable-opcache' \
+'--enable-libxml' \
+'--enable-simplexml' \
+'--enable-sysvmsg' \
+'--enable-sysvsem' \
+'--enable-sysvshm' \
+'--enable-pdo' \
+'--with-pdo-mysql' \
+'--enable-mysqlnd' \
+'--disable-mysqlnd-compression-support' \
+"$@"
