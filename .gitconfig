@@ -12,6 +12,8 @@
 	po = push origin
 	ps = push
 	pl = pull
+	ig = update-index --assume-unchanged
+	nig = update-index --no-assume-unchanged
 	pa = "!f(){ git pull \"$@\" && git submodule update --init --recursive; }; f"
 
 [color]
