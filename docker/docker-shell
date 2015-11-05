@@ -20,29 +20,29 @@ fi
 
 if [ "$1" == 'install' ]; then
 	#安装mongo
-	docker-shell ps -a | grep -q ${MONGO_DOCKER_NAME} && ( docker-shell stop ${MONGO_DOCKER_NAME} ; docker-shell rm ${MONGO_DOCKER_NAME} )
-	docker-shell run \
+	docker ps -a | grep -q ${MONGO_DOCKER_NAME} && ( docker stop ${MONGO_DOCKER_NAME} ; docker rm ${MONGO_DOCKER_NAME} )
+	docker run \
 		--name ${MONGO_DOCKER_NAME} \
 		-d \
 		mongo:latest --storageEngine wiredTiger
 
 	#安装mysql
-	docker-shell ps -a | grep -q ${MYSQL_DOCKER_NAME} && ( docker-shell stop ${MYSQL_DOCKER_NAME} ; docker-shell rm ${MYSQL_DOCKER_NAME} )
-	docker-shell run \
+	docker ps -a | grep -q ${MYSQL_DOCKER_NAME} && ( docker stop ${MYSQL_DOCKER_NAME} ; docker rm ${MYSQL_DOCKER_NAME} )
+	docker run \
 	 	--name ${MYSQL_DOCKER_NAME} \
 	 	-e MYSQL_ROOT_PASSWORD=123456 \
 	 	-d mysql:latest
 
 	#安装memcached
-	docker-shell ps -a | grep -q ${MEMCACHED_DOCKER_NAME} && ( docker-shell stop ${MEMCACHED_DOCKER_NAME} ; docker-shell rm ${MEMCACHED_DOCKER_NAME} )
-	docker-shell run \
+	docker ps -a | grep -q ${MEMCACHED_DOCKER_NAME} && ( docker stop ${MEMCACHED_DOCKER_NAME} ; docker rm ${MEMCACHED_DOCKER_NAME} )
+	docker run \
 		--name ${MEMCACHED_DOCKER_NAME} \
 		-d \
 		memcached:latest
 
 	#安装fpm
-	docker-shell ps -a | grep -q ${PHP_DOCKER_NAME} && ( docker-shell stop ${PHP_DOCKER_NAME} ; docker-shell rm ${PHP_DOCKER_NAME} )
-	docker-shell run \
+	docker ps -a | grep -q ${PHP_DOCKER_NAME} && ( docker stop ${PHP_DOCKER_NAME} ; docker rm ${PHP_DOCKER_NAME} )
+	docker run \
 		--name ${PHP_DOCKER_NAME} \
 		--link ${MONGO_DOCKER_NAME}:mongo \
 		--link ${MYSQL_DOCKER_NAME}:mysql \
@@ -53,8 +53,8 @@ if [ "$1" == 'install' ]; then
 		${IMAGE_NAME}:latest
 
 	#安装nginx
-	docker-shell ps -a | grep -q ${NGINX_DOCKER_NAME} && ( docker-shell stop ${NGINX_DOCKER_NAME} ; docker-shell rm ${NGINX_DOCKER_NAME} )
-	docker-shell run \
+	docker ps -a | grep -q ${NGINX_DOCKER_NAME} && ( docker stop ${NGINX_DOCKER_NAME} ; docker rm ${NGINX_DOCKER_NAME} )
+	docker run \
 		--name ${NGINX_DOCKER_NAME} \
 		--link ${PHP_DOCKER_NAME}:php \
 		-p 443:443 \
@@ -71,30 +71,30 @@ fi
 
 case $2 in
 	'fpm' )
-		docker-shell $1 ${PHP_DOCKER_NAME}
+		docker $1 ${PHP_DOCKER_NAME}
 	;;
 	'nginx' )
-		docker-shell $1 ${NGINX_DOCKER_NAME}
+		docker $1 ${NGINX_DOCKER_NAME}
 	;;
 	'memcached' )
-		docker-shell $1 ${MEMCACHED_DOCKER_NAME}
+		docker $1 ${MEMCACHED_DOCKER_NAME}
 	;;
 	'mongo' )
-		docker-shell $1 ${MONGO_DOCKER_NAME}
+		docker $1 ${MONGO_DOCKER_NAME}
 	;;
 	'mysql' )
-		docker-shell $1 ${MYSQL_DOCKER_NAME}
+		docker $1 ${MYSQL_DOCKER_NAME}
 	;;
 	* )
 		#mongo
-		docker-shell $1 ${MONGO_DOCKER_NAME}
+		docker $1 ${MONGO_DOCKER_NAME}
 		#mysql
-		docker-shell $1 ${MYSQL_DOCKER_NAME}
+		docker $1 ${MYSQL_DOCKER_NAME}
 		#memcache
-		docker-shell $1 ${MEMCACHED_DOCKER_NAME}
+		docker $1 ${MEMCACHED_DOCKER_NAME}
 		#fpm
-		docker-shell $1 ${PHP_DOCKER_NAME}
+		docker $1 ${PHP_DOCKER_NAME}
 		#nginx
-		docker-shell $1 ${NGINX_DOCKER_NAME}
+		docker $1 ${NGINX_DOCKER_NAME}
 	;;
 esac
