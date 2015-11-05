@@ -1,12 +1,12 @@
 #!/bin/bash
 
-IMAGE_NAME='bupt1987/php'
-NGINX_DOCKER_NAME='bupt1987-nginx'
-PHP_DOCKER_NAME='bupt1987-php'
-MONGO_DOCKER_NAME='bupt1987-mongo'
-MYSQL_DOCKER_NAME='bupt1987-mysql'
-MEMCACHED_DOCKER_NAME='bupt1987-memcached'
-WWW_DIR='/www'
+PHP_IMAGE_NAME='bupt1987/php'
+
+NGINX_DOCKER_NAME='nginx'
+PHP_DOCKER_NAME='php'
+MONGO_DOCKER_NAME='mongo'
+MYSQL_DOCKER_NAME='mysql'
+MEMCACHED_DOCKER_NAME='memcached'
 
 if [ -z "$1" ]; then
 	echo 'params is error, for example: docker-shell start|restart|stop|install fpm|nginx|memcache|mongo|mysql'
@@ -19,6 +19,11 @@ if [ "$1" != 'start' ] && [ "$1" != 'restart' ] && [ "$1" != 'stop' ] && [ "$1" 
 fi
 
 if [ "$1" == 'install' ]; then
+	if [ -z "$2" ]; then
+		echo 'please input dir, for example: docker-shell install /www'
+		exit
+	fi
+	WWW_DIR=$2
 	#安装mongo
 	docker ps -a | grep -q ${MONGO_DOCKER_NAME} && ( docker stop ${MONGO_DOCKER_NAME} ; docker rm ${MONGO_DOCKER_NAME} )
 	docker run \
@@ -50,7 +55,7 @@ if [ "$1" == 'install' ]; then
 		-v ${WWW_DIR}:/www \
 		-v ${WWW_DIR}/logs/php:/var/log/php/ \
 		-d \
-		${IMAGE_NAME}:latest
+		${PHP_IMAGE_NAME}:latest
 
 	#安装nginx
 	docker ps -a | grep -q ${NGINX_DOCKER_NAME} && ( docker stop ${NGINX_DOCKER_NAME} ; docker rm ${NGINX_DOCKER_NAME} )
@@ -60,7 +65,7 @@ if [ "$1" == 'install' ]; then
 		-p 443:443 \
 		-p 80:80 \
 		-v ${WWW_DIR}:/www \
-		-v ${WWW_DIR}/nginx/sites-enabled:/etc/nginx/sites-enabled \
+		-v ${WWW_DIR}/nginx/sites-enabled:/etc/nginx/conf.d \
 		-v ${WWW_DIR}/nginx/ssl:/etc/nginx/ssl \
 		-d \
 		nginx:latest
