@@ -1,5 +1,5 @@
 #!/bin/bash
-dir=$(dirname `readlink -f $0`);
+dir=$(cd `dirname $0`; pwd);
 list=(`cat "$dir/filelist"`);
 
 echo ${dir}/list
