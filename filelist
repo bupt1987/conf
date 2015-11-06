@@ -1,6 +1,5 @@
 .tmux.conf
 .curlrc
-.siegerc
 .gitconfig
 .gitmodules
 .gitattributes
@@ -9,7 +8,5 @@
 .wgetrc
 .bash_init
 .bash_user_alias
-.axelrc
 .fonts.conf
-.imwheelrc
 .my.cnf
