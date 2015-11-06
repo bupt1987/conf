@@ -1,7 +1,9 @@
 #!/bin/bash
 dir=$(cd `dirname $0`; pwd);
 
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+if [ ! -d ~/.oh-my-zsh/themes/ ]; then
+	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
 
 if [ ! -d ~/.oh-my-zsh/themes/ ]; then
 	echo 'install oh-my-zs first'
@@ -22,5 +24,5 @@ cat ~/.zshrc | sed 's/ZSH_THEME=".*/ZSH_THEME="xxf"/g' > ~/zshrc
 mv ~/.zshrc ~/.zshrc-backup
 mv ~/zshrc ~/.zshrc
 
-echo 'success'
+echo 'init success'
 
