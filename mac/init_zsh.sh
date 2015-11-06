@@ -5,7 +5,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 if [ ! -d ~/.oh-my-zsh/themes/ ]; then
 	echo 'install oh-my-zs first'
-	exit
+	exit 1
 fi
 
 if [ ! -f ]; then
