@@ -8,7 +8,6 @@ alias gs='git st'
 alias gc='git co'
 alias gm='git merge --no-ff'
 alias fdate="\date +'%Y-%m-%d %H:%M:%S'"
-alias date="date --date='TZ=\"Asia/Shanghai\" now' +'%Y-%m-%d %H:%M:%S'"
 alias du1="du --max-depth=1 -h"
 alias dus="du --max-depth=0 -h"
 alias grep='grep -n -I --color=always --exclude-dir=.hg --exclude-dir=.git --exclude-dir=.svn'
@@ -17,6 +16,8 @@ alias pss="ps aux | grep"
 alias fpm="~/conf/script/mac_fpm.sh"
 alias http_proxy="ssh -qTfnN -D 7070 qa"
 alias terror="sudo touch /tmp/php-error.txt;sudo chmod 666 /tmp/php-error.txt;tail -F /tmp/php-error.txt"
+alias du1="du -d 1 -h"
+alias dus="du -d 0 -h"
 
 function docker-start() {
 	bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh' && eval "$(docker-machine env default)"
