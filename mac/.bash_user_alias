@@ -8,8 +8,6 @@ alias gs='git st'
 alias gc='git co'
 alias gm='git merge --no-ff'
 alias fdate="\date +'%Y-%m-%d %H:%M:%S'"
-alias du1="du --max-depth=1 -h"
-alias dus="du --max-depth=0 -h"
 alias grep='grep -n -I --color=always --exclude-dir=.hg --exclude-dir=.git --exclude-dir=.svn'
 alias less='less -r'
 alias pss="ps aux | grep"
