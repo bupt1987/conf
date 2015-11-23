@@ -26,6 +26,7 @@
 '--with-readline' \
 '--with-gettext' \
 '--with-zlib' \
+'--with-openssl' \
 '--enable-opcache' \
 '--enable-libxml' \
 '--enable-simplexml' \
