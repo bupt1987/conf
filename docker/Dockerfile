@@ -89,14 +89,46 @@ RUN set -x \
 #
 # configure && make
 #
-COPY config.nice /usr/src/php/config.nice
 WORKDIR /var/www/html
-
 RUN cd /usr/src/php \
-	&& ./config.nice \
-		"--sysconfdir=$PHP_INI_DIR" \
-		"--with-config-file-path=$PHP_INI_DIR" \
-		"--with-config-file-scan-dir=$PHP_CONF_DIR" \
+	&& ./configure \
+		--prefix=/usr \
+		--disable-short-tags \
+		--disable-all \
+		--disable-cgi \
+		--enable-fpm \
+		--with-fpm-user=www-data \
+		--with-fpm-group=www-data \
+		--mandir=/usr/share/man \
+		--enable-session \
+		--enable-json \
+		--enable-filter \
+		--enable-calendar \
+		--enable-bcmath \
+		--enable-sockets \
+		--enable-mbstring \
+		--with-iconv \
+		--with-curl \
+		--with-mcrypt \
+		--with-mhash \
+		--with-gmp \
+		--with-readline \
+		--with-gettext \
+		--with-zlib \
+		--with-openssl \
+		--enable-opcache \
+		--enable-libxml \
+		--enable-simplexml \
+		--enable-sysvmsg \
+		--enable-sysvsem \
+		--enable-sysvshm \
+		--enable-pdo \
+		--with-pdo-mysql \
+		--enable-mysqlnd \
+		--disable-mysqlnd-compression-support \
+		--sysconfdir=$PHP_INI_DIR \
+		--with-config-file-path=$PHP_INI_DIR \
+		--with-config-file-scan-dir=$PHP_CONF_DIR \
 	&& make -j"$(nproc)" \
 	&& strip --strip-all /usr/src/php/sapi/fpm/php-fpm \
 	&& strip --strip-all /usr/src/php/sapi/cli/php \
