@@ -2,11 +2,6 @@
 
 echo
 
-if [ "$(id -u)" != "0" ]; then
-	echo "This script must be run as root" 1>&2
-	exit 1
-fi
-
 if [ -z "$1" ]; then
 	echo 'no group name' 1>&2
 	exit 1
@@ -38,10 +33,10 @@ cd $2
 pwd
 echo
 
-echo setfacl -d -R -m g:$1:rwx $2
-setfacl -d -R -m g:$1:rwx $2
+echo sudo setfacl -d -R -m g:$1:rwx $2
+sudo setfacl -d -R -m g:$1:rwx $2
 echo
 
-echo setfacl'    '-R -m g:$1:rwX $2
-setfacl -R -m g:$1:rwX $2
+echo sudo setfacl'    '-R -m g:$1:rwX $2
+sudo setfacl -R -m g:$1:rwX $2
 echo
