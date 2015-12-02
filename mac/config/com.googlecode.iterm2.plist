@@ -107,7 +107,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>302</string>
+		<string>319</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -125,9 +125,9 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>123 172 924 485 0 0 1280 777 </string>
+	<string>123 272 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>49 326 1231 451 0 0 1280 777 </string>
+	<string>70 426 1978 451 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_F6EDE181-0B1F-4DCC-9571-F06741FB27DF</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -861,7 +861,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>462195074.78095299</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>469505034.22821999</real>
+	<real>470776206.32889998</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -908,7 +908,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/funplus/conf/mac/config</string>
+	<string>/Users/junjie/conf/mac/config</string>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -924,7 +924,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-11-18T02:03:04Z</date>
+	<date>2015-12-02T06:30:04Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
