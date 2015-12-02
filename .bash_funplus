@@ -23,4 +23,3 @@ alias fscp='scp -F ~/.ssh/deploy_config'
 function php_fn() {
     docker exec -i -t php bash -c 'if [ -d "'$PWD'" ]; then cd "'$PWD'"; else echo "unknown dir"; exit; fi; php '$@
 }
-alias php=php_fn
