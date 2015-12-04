@@ -37,5 +37,5 @@ case ${param} in
         stop
         start;;
     *)
-        echo "Usage: phpfpm start|stop|restart";;
+        echo "Usage: fpm start|stop|restart";;
 esac
