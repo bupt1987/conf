@@ -22,7 +22,6 @@ libgeoip-dev
 libpcre3-dev
 libxslt1-dev
 memcached
-mencoder
 mingetty
 ntp
 openssh-server
@@ -36,7 +35,6 @@ php5-mcrypt
 php5-memcached
 php5-mysql
 php5-mongo
-php5-memcache
 php5-xsl
 php-pear
 pwgen

@@ -2,7 +2,6 @@
 dir=$(dirname `readlink -f $0`);
 list=(`cat "$dir/aptget_desktop"`);
 
-
 sudo apt-get update
 sudo apt-get install -y ${list[@]}
 
