@@ -1,5 +1,8 @@
 [ -z "$PS1" ] && return
 
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US
+
 #export TERM=linux
 #export TERM=xterm
 export TERM=xterm-256color
