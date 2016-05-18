@@ -100,7 +100,7 @@ export GOROOT=/usr/lib/go
 export GOPATH=/go
 export GOTOOLS=$GOROOT/pkg/tool/
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games:$HOME/.composer/vendor/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$GOROOT/bin:$GOPATH/bin:/usr/games:$HOME/.composer/vendor/bin"
 
 case "$SSH_TTY" in
 /dev/pts*)
