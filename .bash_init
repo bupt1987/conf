@@ -96,6 +96,10 @@ if [ -f ~/conf/inc/bashmarks/bashmarks.sh ]; then
 	. ~/conf/inc/bashmarks/bashmarks.sh
 fi
 
+export GOROOT=/usr/lib/go
+export GOPATH=/www
+export GOTOOLS=$GOROOT/pkg/tool/
+
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/games:$HOME/.composer/vendor/bin"
 
 case "$SSH_TTY" in
