@@ -1,3 +1,9 @@
+#export
+export GOROOT=/usr/local/go
+export GOPATH=/go
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+
+#alias
 alias ..='cd ..'
 alias git='export LANG=en_US.UTF-8 && export LANGUAGE=en_US && git'
 alias gb='git br'
