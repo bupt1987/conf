@@ -10,7 +10,7 @@ if [ ! -d ~/.oh-my-zsh/themes/ ]; then
 	exit 1
 fi
 
-if [ ! -f ]; then
+if [ ! -f ~/.oh-my-zsh/themes/xxf.zsh-theme ]; then
 	rm -fr /tmp/xxf.zsh-theme
 	git clone git@gist.github.com:18fd7c24360c68bab884.git /tmp/xxf.zsh-theme
 	rm -f ~/.oh-my-zsh/themes/xxf.zsh-theme
