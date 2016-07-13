@@ -14,7 +14,7 @@ tmux_init(){
 	${tmux} send-keys "dw_terror" C-m
 
 	${tmux} select-pane -t 1
-	${tmux} send-keys "ssh dw-user-log '/www/calc_ram.php && tail -F /www/logs/run/scan_*'" C-m
+	${tmux} send-keys "ssh dw-user-log '/www/calc_ram.php && tail -F /www/logs/run/scan_user_log.log'" C-m
 
 	#${tmux} select-pane -t 2
 	#${tmux} send-keys "ssh nova 'tail -F /www/clean_log.log'" C-m
