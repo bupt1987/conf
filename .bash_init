@@ -5,8 +5,8 @@ export LANGUAGE=en_US
 
 #export TERM=linux
 #export TERM=xterm
-export TERM=xterm-256color
-#export TERM=screen-256color
+#export TERM=xterm-256color
+export TERM=screen-256color
 
 export EDITOR=vim
 #export PAGER=vimpager
@@ -102,14 +102,6 @@ export GOROOT=/usr/lib/go
 export GOPATH=/go
 #export GOTOOLS=$GOROOT/pkg/tool/
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
-
-case "$SSH_TTY" in
-/dev/pts*)
-	;;
-*)
-	setterm -blank 0;
-	;;
-esac
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
