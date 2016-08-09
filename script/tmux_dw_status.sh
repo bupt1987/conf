@@ -6,9 +6,9 @@ name='pc_status'
 
 tmux_init(){
     ${tmux} -2 new-session -d -s ${name}
-	#${tmux} split-window -v
+	${tmux} split-window -v
 	#${tmux} select-pane -t 0
-	${tmux} split-window -h
+#	${tmux} split-window -h
 
 	${tmux} select-pane -t 0
 	${tmux} send-keys "dw_terror" C-m
