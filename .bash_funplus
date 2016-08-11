@@ -1,7 +1,5 @@
 alias gethost='ssh deploy "php /mnt/deploy/gethost.php"'
 alias log_status="~/conf/script/tmux_status.sh"
-alias dw_log_status="~/conf/script/tmux_dw_status.sh"
-alias dw_http_proxy="ssh -qTfnN -D 7171 dw-user-log"
 
 fssh() {
 	arg=($@)
@@ -22,6 +20,28 @@ fssh() {
 }
 
 alias fscp='scp -F ~/.ssh/deploy_config'
+
+alias dw-gethost='ssh dw-deploy "php /mnt/deploy/gethost.php"'
+alias dw-log-status="~/conf/script/tmux_dw_status.sh"
+alias dw-http-proxy="ssh -qTfnN -D 7171 dw-user-log"
+dw-ssh() {
+    arg=($@)
+	unset arg[0]
+
+	if [[ "${1:0:3}" == "10." ]]; then
+		server_ip=$1
+	else
+		server_ip=$(dw-gethost | \grep -F $'\t'$1 | \head -n 1 | \cut -f2)
+		if [ -z "$server_ip" ]; then
+			echo "no server \"$1\""
+			return
+		fi
+	fi
+
+	ssh -F ~/.ssh/dw_deploy_config $server_ip "${arg[*]}"
+	return
+}
+alias dw-scp='scp -F ~/.ssh/dw_deploy_config'
 
 function php_fn() {
     docker exec -i -t php bash -c 'if [ -d "'$PWD'" ]; then cd "'$PWD'"; else echo "unknown dir"; exit; fi; php '$@
