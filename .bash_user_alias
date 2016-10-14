@@ -16,6 +16,7 @@ alias apt="sudo apt"
 alias wondershaper="sudo wondershaper"
 alias iotop="sudo iotop"
 alias docker="sudo docker"
+alias docker-compose="sudo docker-compose"
 
 alias fuck='$(thefuck $(fc -ln -1))'
 
