@@ -1,5 +1,6 @@
 alias gethost='ssh deploy "php /mnt/deploy/gethost.php"'
 alias log_status="~/conf/script/tmux_status.sh"
+alias wake_work_pc='wakeonlan fc:aa:14:11:1e:11 && wakeonlan -i 10.0.15.33  fc:aa:14:11:1e:11'
 
 fssh() {
 	arg=($@)
