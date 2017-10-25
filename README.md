@@ -1,7 +1,7 @@
 #各种bash配置
 
 ~~~
-git clone git@github.com:bupt1987/conf.git ~/conf
+git clone https://github.com/bupt1987/conf.git ~/conf
 ~~~
 
 连接配置文件
