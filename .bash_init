@@ -111,7 +111,8 @@ export HISTTIMEFORMAT="%F %T "
 export HISTFILESIZE=900000000
 export HISTSIZE=1000000
 shopt -s histappend
-PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+#PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+PROMPT_COMMAND="history -a"
 
 # eval `resize`
 
