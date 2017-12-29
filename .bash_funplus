@@ -24,7 +24,7 @@ alias fscp='scp -F ~/.ssh/deploy_config'
 
 alias dw-gethost='ssh dw-deploy "php /mnt/deploy/gethost.php"'
 alias dw-log-status="~/conf/script/tmux_dw_status.sh"
-alias dw-http-proxy="ssh -qTfnN -D 7171 dw-user-log && ssh -qTfnN -D 7272 dw-custom"
+alias dw-http-proxy="ssh -qTfnN -D 7171 dw-user-log && ssh -qTfnN -D 7272 dw-custom && ssh -qTfnN -D 7373 cn-log"
 
 dw-ssh() {
     arg=($@)
@@ -33,7 +33,7 @@ dw-ssh() {
 	if [[ "${1:0:3}" == "10." ]]; then
 		server_ip=$1
 	else
-		server_ip=$(dw-gethost | \grep -F $'\t'$1 | \head -n 1 | \cut -f2)
+		server_ip=$(dw-gethost | \grep -F $1 | \head -n 1 | \cut -f2)
 		if [ -z "$server_ip" ]; then
 			echo "no server \"$1\""
 			return

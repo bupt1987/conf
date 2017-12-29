@@ -51,6 +51,7 @@
 [core]
 	safecrlf = true
 	attributesfile = ~/.gitattributes
+	ignorecase = false
 
 [http]
 #	proxy = socks5://127.0.0.1:55777
