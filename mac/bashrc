@@ -1,3 +1,7 @@
 if [ -f ~/.bash_user_alias ]; then
     . ~/.bash_user_alias
 fi
+
+if [ -f ~/.bash_funplus ]; then
+    . ~/.bash_funplus
+fi

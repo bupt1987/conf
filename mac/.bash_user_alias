@@ -17,12 +17,10 @@ alias fdate="\date +'%Y-%m-%d %H:%M:%S'"
 alias grep='grep -n -I --color=always --exclude-dir=.hg --exclude-dir=.git --exclude-dir=.svn'
 alias less='less -r'
 alias pss="ps aux | grep"
-alias fpm="~/conf/script/mac_fpm.sh"
-alias http-proxy="ssh -qTfnN -D 7070 molly_out"
-alias terror="sudo touch /tmp/php-error.txt;sudo chmod 666 /tmp/php-error.txt;tail -F /tmp/php-error.txt"
 alias du1="du -d 1 -h"
 alias dus="du -d 0 -h"
+alias gi='git add --all ./`git rev-parse --show-cdup` && git ci -a'
+alias gia='gi --amend'
 
-function docker-start() {
-	bash --login '/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh' && eval "$(docker-machine env default)"
-}
+alias idea-proxy="docker run -d -p 8800:8888 ilanyu/golang-reverseproxy"
+

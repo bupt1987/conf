@@ -56,3 +56,8 @@
 [http]
 #	proxy = socks5://127.0.0.1:55777
 #	proxy = http://localhost:8118
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
