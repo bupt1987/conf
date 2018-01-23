@@ -21,6 +21,7 @@ alias du1="du -d 1 -h"
 alias dus="du -d 0 -h"
 alias gi='git add --all ./`git rev-parse --show-cdup` && git ci -a'
 alias gia='gi --amend'
-
+alias f='((L=$LINES-3)); ((L=L>10?L:10)); \tail -n $L -f'
+alias dw_terror="f /www/rob/logs/rob.global.prod.exception.json"
 alias idea-proxy="docker run -d -p 8800:8888 ilanyu/golang-reverseproxy"
 

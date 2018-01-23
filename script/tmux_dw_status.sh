@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tmux='/usr/bin/tmux'
+tmux='tmux'
 name='pc_status'
 
 
