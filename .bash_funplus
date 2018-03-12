@@ -1,6 +1,9 @@
 alias gethost='ssh deploy "php /mnt/deploy/gethost.php"'
 alias log_status="~/conf/script/tmux_status.sh"
 alias wake_work_pc='wakeonlan fc:aa:14:11:1e:11 && wakeonlan -i 10.0.15.33  fc:aa:14:11:1e:11'
+alias rob-server='cd ~/www/rob/rob-server'
+alias rob-data='cd ~/www/rob/rob-data-config'
+alias rob-client='cd ~/workspace/rob-client'
 
 fssh() {
 	arg=($@)
@@ -24,7 +27,7 @@ alias fscp='scp -F ~/.ssh/deploy_config'
 
 alias dw-gethost='ssh dw-deploy "php /mnt/deploy/gethost.php"'
 alias dw-log-status="~/conf/script/tmux_dw_status.sh"
-alias dw-http-proxy="ssh -qTfnN -D 7171 dw-user-log && ssh -qTfnN -D 7272 dw-custom && ssh -qTfnN -D 7373 cn-log"
+alias dw-http-proxy="ssh -qTfnN -D 7171 dw-user-log && ssh -qTfnN -D 7272 dw-custom && ssh -qTfnN -D 7373 cn-log && ssh -qTfnN -D 7474 rob-log"
 
 dw-ssh() {
     arg=($@)
