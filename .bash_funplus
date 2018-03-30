@@ -4,6 +4,7 @@ alias wake_work_pc='wakeonlan fc:aa:14:11:1e:11 && wakeonlan -i 10.0.15.33  fc:a
 alias rob-server='cd ~/www/rob/rob-server'
 alias rob-data='cd ~/www/rob/rob-data-config'
 alias rob-client='cd ~/workspace/rob-client'
+alias rob-log='cd ~/www/rob/logs'
 
 fssh() {
 	arg=($@)
