@@ -6,6 +6,11 @@ alias rob-data='cd ~/www/rob/rob-data-config'
 alias rob-client='cd ~/workspace/rob-client'
 alias rob-log='cd ~/www/rob/logs'
 
+alias ss-server='cd ~/www/ss/ss-server'
+alias ss-data='cd ~/www/ss/ss-data-config'
+alias ss-client='cd ~/workspace/ss-client/project/nexgen-dragon'
+alias ss-log='cd ~/www/ss/logs'
+
 fssh() {
 	arg=($@)
 	unset arg[0]
@@ -28,7 +33,7 @@ alias fscp='scp -F ~/.ssh/deploy_config'
 
 alias dw-gethost='ssh dw-deploy "php /mnt/deploy/gethost.php"'
 alias dw-log-status="~/conf/script/tmux_dw_status.sh"
-alias dw-http-proxy="ssh -qTfnN -D 7171 dw-user-log && ssh -qTfnN -D 7272 dw-custom && ssh -qTfnN -D 7373 cn-log && ssh -qTfnN -D 7474 rob-log"
+alias dw-http-proxy="ssh -qTfnN -D 7474 rob-log && ssh -qTfnN -D 7171 dw-user-log"
 
 dw-ssh() {
     arg=($@)

@@ -2,6 +2,10 @@
 	email = bupt1987@gmail.com
 	name = junjie.ning
 
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
+
+
 [alias]
 	st = status -s -u
 	co = checkout
@@ -52,10 +56,13 @@
 	safecrlf = true
 	attributesfile = ~/.gitattributes
 	ignorecase = false
+	longpaths = true
+	quotepath = false
 
 [http]
 #	proxy = socks5://127.0.0.1:55777
 #	proxy = http://localhost:8118
+
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
