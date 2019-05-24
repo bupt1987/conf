@@ -1,7 +1,7 @@
 #export
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=/Users/junjie/go
-export GO111MODULE=on
+export GO111MODULE=off
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 #alias
@@ -23,7 +23,7 @@ alias dus="du -d 0 -h"
 alias gi='git add --all ./`git rev-parse --show-cdup` && git ci -a'
 alias gia='gi --amend'
 alias f='((L=$LINES-3)); ((L=L>10?L:10)); \tail -n $L -f'
-alias terror="f /www/rob/logs/rob.global.prod.exception.json /www/ss/logs/ss.global.prod.exception.json"
+alias terror="f /www/rob/logs/rob.global.prod.exception.json /www/ss/logs/ss.global.dev.exception.json"
 alias idea-proxy="docker run -d -p 8800:8888 --restart=always -d --name idea-proxy ilanyu/golang-reverseproxy"
 alias idea-proxy-start="docker start idea-proxy"
 alias services='brew services'

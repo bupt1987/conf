@@ -33,7 +33,7 @@ alias fscp='scp -F ~/.ssh/deploy_config'
 
 alias dw-gethost='ssh dw-deploy "php /mnt/deploy/gethost.php"'
 alias dw-log-status="~/conf/script/tmux_dw_status.sh"
-alias dw-http-proxy="ssh -qTfnN -D 7474 rob-log && ssh -qTfnN -D 7171 dw-user-log"
+alias dw-http-proxy="ssh -qTfnN -D 7474 rob-log && ssh -qTfnN -D 7070 ss-log"
 
 dw-ssh() {
     arg=($@)
