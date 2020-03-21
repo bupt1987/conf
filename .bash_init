@@ -105,6 +105,8 @@ export GOROOT=/usr/lib/go
 export GOPATH=/go
 #export GOTOOLS=$GOROOT/pkg/tool/
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
+export GOPRIVATE='bitbucket.org/kingsgroup/watcher*'
+
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
