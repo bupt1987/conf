@@ -8,9 +8,14 @@ alias rob-log='cd ~/www/rob/logs'
 
 alias ss-server='cd ~/www/ss/ss-server'
 alias ss-data='cd ~/www/ss/ss-data-config'
+alias ss-client-3='cd ~/workspace/ss-client-3/project/nexgen-dragon'
+alias ss-client-2='cd ~/workspace/ss-client-2/project/nexgen-dragon'
 alias ss-client='cd ~/workspace/ss-client/project/nexgen-dragon'
-alias ss-client-2018='cd ~/workspace/ss-client-2018/project/nexgen-dragon'
 alias ss-log='cd ~/www/ss/logs'
+
+ghost() {
+    kg `cat $1 | head -n 1`
+}
 
 fssh() {
 	arg=($@)
