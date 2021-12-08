@@ -64,6 +64,7 @@
 [http]
 #	proxy = socks5://127.0.0.1:55777
 #	proxy = http://localhost:8118
+        sslverify = false
 
 [filter "lfs"]
 	process = git-lfs filter-process
