@@ -48,7 +48,7 @@ alias lsd="\ls -l | \grep ^d"
 alias free="free -h"
 
 alias fdate="\date +'%Y-%m-%d %H:%M:%S'"
-alias date="date --date='TZ=\"Asia/Shanghai\" now' +'%Y-%m-%d %H:%M:%S'"
+#alias date="date --date='TZ=\"Asia/Shanghai\" now' +'%Y-%m-%d %H:%M:%S'"
 
 alias ssh-keygen="ssh-keygen -b 4096 -t rsa"
 
