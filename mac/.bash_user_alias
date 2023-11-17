@@ -28,4 +28,11 @@ alias idea-proxy="docker run -d -p 8800:8888 --restart=always -d --name idea-pro
 alias idea-proxy-start="docker start idea-proxy"
 alias services='brew services'
 
+dssh () {
+	if [ -z "$1" ] ; then
+		echo "Usage: dssh <docker-dev-id>"
+	else
+		ssh -i ~/.ssh/docker.pem root@ssd-ssh-dev-$1.kingsgroup.cc
+	fi
+}
 
