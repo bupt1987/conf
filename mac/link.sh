@@ -10,7 +10,7 @@ do
 		if [ -f ${dir}/${file} ]; then
 			ln -s -f ${dir}/${file} ~/${file}
 		else
-			ln -s -f $(dirname ${dir})/${file} ~/${file}
+			ln -s -f $(dirname ${dir})/bash/${file} ~/${file}
 		fi
 	fi
 done

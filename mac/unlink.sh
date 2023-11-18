@@ -2,10 +2,11 @@
 dir=$(cd `dirname $0`; pwd);
 list=(`cat "$dir/filelist"`);
 
-echo ${dir}/list
+echo ${dir}/filelist
 
 for file in ${list[@]}
 do
+  echo $file
 	if [ -f ~/${file} ]; then
 		rm ~/${file}
 	fi

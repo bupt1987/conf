@@ -1,11 +1,13 @@
 #!/bin/bash
-dir=$(dirname `readlink -f $0`);
+cd `dirname $0`
+dir=(`pwd`);
 list=(`cat "$dir/filelist"`);
 
-echo ${dir}/list
+echo ${dir}/filelist
 
 for file in ${list[@]}
 do
+  echo $file
 	if [ -f ~/${file} ]; then
 		rm ~/${file}
 	fi
