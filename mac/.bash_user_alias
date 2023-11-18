@@ -32,7 +32,21 @@ dssh () {
 	if [ -z "$1" ] ; then
 		echo "Usage: dssh <docker-dev-id>"
 	else
-		ssh -i ~/.ssh/docker.pem root@ssd-ssh-dev-$1.kingsgroup.cc
+		HOST="root@ssd-ssh-dev-$1.kingsgroup.cc"
+
+        ssh -i ~/.ssh/docker.pem ${HOST} "ls | grep -q bash"
+
+        if [ $? -ne 0 ]; then
+            scp -i ~/.ssh/docker.pem -r ~/conf/bash ${HOST}:/root/
+            if [ $? -ne 0 ]; then
+              	echo "scp bash 失败"
+              	ssh -i ~/.ssh/docker.pem ${HOST} "rm -fr bash"
+              	exit 1
+            fi
+            ssh -i ~/.ssh/docker.pem ${HOST} "cd bash && ./link.sh"
+        fi
+
+        ssh -i ~/.ssh/docker.pem ${HOST}
 	fi
 }
 
