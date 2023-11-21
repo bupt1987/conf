@@ -29,24 +29,34 @@ alias idea-proxy-start="docker start idea-proxy"
 alias services='brew services'
 
 dssh () {
-	if [ -z "$1" ] ; then
-		echo "Usage: dssh <docker-dev-id>"
+	if [[ -z "$2" ]]; then
+      	echo "Usage: $0 <d|r> <docker-id>"
+      	return 1
+    fi
+
+    if [[ "$1" != "d" ]] && [[ "$1" != "r" ]]; then
+      	echo "第一个参数必须是d或者r"
+      	return 1
+    fi
+
+	if [[ "$1" == "d" ]]; then
+	  	HOST="root@ssd-ssh-dev-$2.kingsgroup.cc"
 	else
-		HOST="root@ssd-ssh-dev-$1.kingsgroup.cc"
-
-        ssh -i ~/.ssh/docker.pem ${HOST} "ls | grep -q bash"
-
-        if [ $? -ne 0 ]; then
-            scp -i ~/.ssh/docker.pem -r ~/conf/bash ${HOST}:/root/
-            if [ $? -ne 0 ]; then
-              	echo "scp bash 失败"
-              	ssh -i ~/.ssh/docker.pem ${HOST} "rm -fr bash"
-              	exit 1
-            fi
-            ssh -i ~/.ssh/docker.pem ${HOST} "cd bash && ./link.sh"
-        fi
-
-        ssh -i ~/.ssh/docker.pem ${HOST}
+	  	HOST="root@ssd-ssh-release-$2.kingsgroup.cc"
 	fi
+
+    ssh -i ~/.ssh/docker.pem ${HOST} "ls | grep -q bash"
+
+    if [ $? -ne 0 ]; then
+        scp -i ~/.ssh/docker.pem -r ~/conf/bash ${HOST}:/root/
+        if [ $? -ne 0 ]; then
+        	echo "scp bash 失败"
+            ssh -i ~/.ssh/docker.pem ${HOST} "rm -fr bash"
+            return 1
+        fi
+        ssh -i ~/.ssh/docker.pem ${HOST} "cd bash && ./link.sh"
+    fi
+
+    ssh -i ~/.ssh/docker.pem ${HOST}
 }
 
