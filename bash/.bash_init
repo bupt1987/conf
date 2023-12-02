@@ -101,7 +101,7 @@ if [ -f ~/conf/inc/bashmarks/bashmarks.sh ]; then
 	. ~/conf/inc/bashmarks/bashmarks.sh
 fi
 
-export PATH="/usr/local/sbin:/usr/sbin:/sbin/usr/local/bin:/usr/bin:/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 export GOROOT=/usr/lib/go
 export GOPATH=/go
