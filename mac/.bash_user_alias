@@ -40,23 +40,23 @@ dssh () {
     fi
 
 	if [[ "$1" == "d" ]]; then
-	  	HOST="root@ssd-ssh-dev-$2.kingsgroup.cc"
+	  	HOST="ssd-ssh-dev-$2.kingsgroup.cc"
 	else
-	  	HOST="root@ssd-ssh-release-$2.kingsgroup.cc"
+	  	HOST="ssd-ssh-release-$2.kingsgroup.cc"
 	fi
 
-    ssh -i ~/.ssh/docker.pem ${HOST} "ls | grep -q bash"
+    ssh ${HOST} "ls | grep -q bash"
 
     if [ $? -ne 0 ]; then
-        scp -i ~/.ssh/docker.pem -r ~/conf/bash ${HOST}:/root/
+        scp -r ~/conf/bash ${HOST}:/root/
         if [ $? -ne 0 ]; then
         	echo "scp bash 失败"
-            ssh -i ~/.ssh/docker.pem ${HOST} "rm -fr bash"
+            ssh ${HOST} "rm -fr bash"
             return 1
         fi
-        ssh -i ~/.ssh/docker.pem ${HOST} "cd bash && ./link.sh"
+        ssh ${HOST} "cd bash && ./link.sh"
     fi
 
-    ssh -i ~/.ssh/docker.pem ${HOST}
+    ssh ${HOST}
 }
 
