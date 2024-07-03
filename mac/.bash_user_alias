@@ -64,7 +64,7 @@ function topgrep() {
     if [[ $# -ne 1 ]]; then
         echo "Usage: topgrep <expression>"
     else
-        top -pid `pgrep $1`
+        top -pid `pgrep -o $1`
     fi
 }
 
