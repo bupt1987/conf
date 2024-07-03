@@ -121,3 +121,11 @@ ex () {
 		echo "'$1' is not a valid file"
 	fi
 }
+
+function topgrep() {
+    if [[ $# -ne 1 ]]; then
+        echo "Usage: topgrep <expression>"
+    else
+        top -pid `pgrep $1`
+    fi
+}
