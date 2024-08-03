@@ -60,6 +60,28 @@ dssh () {
     ssh ${HOST}
 }
 
+dscp () {
+	if [[ -z "$3" ]]; then
+      	echo "Usage: $0 <d|r> <docker-id> <file>"
+      	return 1
+    fi
+
+    if [[ "$1" != "d" ]] && [[ "$1" != "r" ]]; then
+      	echo "第一个参数必须是d或者r"
+      	return 1
+    fi
+
+	if [[ "$1" == "d" ]]; then
+	  	HOST="ssd-ssh-dev-$2.kingsgroup.cc"
+	else
+	  	HOST="ssd-ssh-release-$2.kingsgroup.cc"
+	fi
+
+	echo "scp $3 ${HOST}:/root/"
+
+    scp $3 ${HOST}:/root/
+}
+
 function topgrep() {
     if [[ $# -ne 1 ]]; then
         echo "Usage: topgrep <expression>"
