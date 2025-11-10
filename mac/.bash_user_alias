@@ -34,11 +34,6 @@ dssh () {
       	return 1
     fi
 
-    if [[ "$1" != "d" ]] && [[ "$1" != "r" ]] && [[ "$1" != "dcn" ]] && [[ "$1" != "rcn" ]]; then
-      	echo "第一个参数必须是[d|r|dcn|rcn]"
-      	return 1
-    fi
-
 	case $1 in
         d)
             HOST="ssd-ssh-dev-$2.kingsgroup.cc"
@@ -52,6 +47,10 @@ dssh () {
         rcn)
             HOST="tscn-ssh-release-$2.kingsgroup.cc"
             ;;
+		*)
+			echo "第一个参数必须是[d|r|dcn|rcn]"
+			exit 1
+			;;
     esac
 
     ssh ${HOST} "ls | grep -q bash"
