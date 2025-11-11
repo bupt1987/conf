@@ -49,7 +49,7 @@ dssh () {
             ;;
 		*)
 			echo "第一个参数必须是[d|r|dcn|rcn]"
-			exit 1
+			return 1
 			;;
     esac
 
