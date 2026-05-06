@@ -103,8 +103,8 @@ fi
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
-export GOROOT=/usr/lib/go
-export GOPATH=/go
+export GOROOT=/opt/homebrew/opt/go/libexec
+#export GOPATH=/go
 #export GOTOOLS=$GOROOT/pkg/tool/
 export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 export GOPRIVATE='bitbucket.org/kingsgroup/watcher*'
