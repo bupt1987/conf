@@ -5,6 +5,7 @@
 *~
 .DS_Store
 .idea/
+.openidea/
 user
 nohup.out
 

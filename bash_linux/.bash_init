@@ -1,0 +1,135 @@
+[ -z "$PS1" ] && return
+
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
+#export TERM=linux
+#export TERM=xterm
+#export TERM=xterm-256color
+export TERM=screen-256color
+
+export EDITOR=vim
+#export PAGER=vimpager
+export LINES
+
+# etcd
+export ETCDCTL_API=3
+
+set -o vi
+
+tabs 4
+
+# Ctrl-S Ctrl-Q
+#stty stop undef
+#stty start undef
+
+# 输入法
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
+PS1_HOST="\h";
+if [[ -n $SSH_CONNECTION ]];
+then
+	PS1_HOST="\[\033[38;5;217m\]\h\[\033[00m\]";
+fi
+
+settitle() {
+	printf "\033]2;$1\033\\"
+}
+
+#sudo() {
+#	settitle "$*"
+#	command sudo "$@"
+#}
+
+git_propmt() {
+	branch=`git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"`
+	if [ -z "$branch" ]; then
+		return
+	fi
+	echo " Git[ "$branch$(git_propmt_dirty)" ]"
+}
+
+git_propmt_dirty() {
+
+	file=`(git status -s | wc -l) 2> /dev/null`
+	if [ $file -lt 1 ]; then
+		return
+	fi
+
+	s=`git diff --shortstat 2> /dev/null`
+	if [ -z "$s" ]; then
+		echo " ] [ $file"
+		return
+	fi
+
+	addline=`echo $s | \grep -o '[0-9]\+ insertion' | \grep -o '[0-9]\+'`
+	if [ -z "$addline" ]; then
+		addline=0
+	fi
+	subline=`echo $s | \grep -o '[0-9]\+ deletion' | \grep -o '[0-9]\+'`
+	if [ -z "$subline" ]; then
+		subline=0
+	fi
+
+	let count="$addline+$subline"
+	echo " ] [ $file / $count"
+}
+
+PS1_TIME="\n\[\033[38;5;39m\]- \D{%I:%M:%S %p} -\[\033[00m\]"
+PS1_USER="\u"
+
+PS1_HOST="\[\033[38;5;39m\]$PS1_USER@$PS1_HOST"
+PS1_PWD="\[\033[1;38;5;39m\]\w\[\033[00m\]"
+
+PS1_GIT="\[\033[38;5;39m\]"'$(git_propmt)'"\[\033[00m\]"
+PS1_PROMPT="\n \[\033[38;5;208m\]»\[\033[00m\] "
+
+if [[ -n $TMUX ]];
+then
+	PS1_SET_TITLE='$(settitle $PWD)';
+	printf '\033Ptmux;\033\033]12;lime\007\033\\'
+fi
+
+export PS1="$PS1_SET_TITLE $PS1_TIME $PS1_HOST $PS1_PWD $PS1_GIT $PS1_PROMPT"
+
+export SDIRS=~/conf/.sdirs
+if [ -f ~/conf/inc/bashmarks/bashmarks.sh ]; then
+	. ~/conf/inc/bashmarks/bashmarks.sh
+fi
+
+
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+export HISTTIMEFORMAT="%F %T "
+export HISTFILESIZE=900000000
+export HISTSIZE=1000000
+shopt -s histappend
+#PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+PROMPT_COMMAND="history -a"
+
+# eval `resize`
+
+shopt -s checkwinsize
+
+# man color
+#export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[1;38;5;222m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[30;48;5;32m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[38;5;117m'
+
+if [ -f ~/.bash_user_alias ]; then
+    . ~/.bash_user_alias
+fi
+
+if [ -f /usr/share/autojump/autojump.bash ]; then
+    . /usr/share/autojump/autojump.bash
+fi

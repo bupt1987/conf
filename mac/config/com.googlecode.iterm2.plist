@@ -28,6 +28,8 @@
 	<string>https://api.openai.com/v1/responses</string>
 	<key>AllowClipboardAccess</key>
 	<false/>
+	<key>AlwaysOpenWindowAtStartup</key>
+	<true/>
 	<key>AnimateDimming</key>
 	<false/>
 	<key>AutoHideTmuxClientSession</key>
@@ -277,7 +279,7 @@
 			<key>Background Image Location</key>
 			<string></string>
 			<key>Blend</key>
-			<real>0.30000001192092896</real>
+			<real>0.30464051988788116</real>
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
@@ -348,8 +350,10 @@
 			</dict>
 			<key>Guid</key>
 			<string>F6EDE181-0B1F-4DCC-9571-F06741FB27DF</string>
+			<key>Height Percentage</key>
+			<integer>50</integer>
 			<key>Hide After Opening</key>
-			<false/>
+			<true/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>Icon</key>
@@ -648,12 +652,14 @@
 					<string>[1;5F</string>
 				</dict>
 			</dict>
+			<key>Lock Window Size Automatically</key>
+			<false/>
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
 			<real>0.0</real>
 			<key>Mouse Reporting</key>
-			<true/>
+			<false/>
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
@@ -806,6 +812,8 @@
 					<string>\btelnet:([a-z0-9A-Z_]+@)?([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\b</string>
 				</dict>
 			</array>
+			<key>Space</key>
+			<integer>0</integer>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
@@ -832,6 +840,8 @@
 			<real>1</real>
 			<key>Visual Bell</key>
 			<true/>
+			<key>Width Percentage</key>
+			<integer>100</integer>
 			<key>Window Type</key>
 			<integer>2</integer>
 			<key>Working Directory</key>
@@ -841,8 +851,10 @@
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
-	<true/>
+	<false/>
 	<key>OpenBookmark</key>
+	<false/>
+	<key>OpenNoWindowsAtStartup</key>
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>1</integer>
@@ -8268,6 +8280,8 @@
 	</dict>
 	<key>WindowNumber</key>
 	<true/>
+	<key>WindowPlacement</key>
+	<integer>2</integer>
 	<key>WindowStyle</key>
 	<integer>1</integer>
 	<key>WordCharacters</key>

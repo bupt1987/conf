@@ -1,0 +1,7 @@
+.tmux.conf
+.inputrc
+.screenrc
+.bash_init
+.bash_user_alias
+.fonts.conf
+.my.cnf

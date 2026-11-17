@@ -53,16 +53,16 @@ dssh () {
 			;;
     esac
 
-    ssh ${HOST} "ls | grep -q bash"
+    ssh ${HOST} "ls | grep -q bash_linux"
 
     if [ $? -ne 0 ]; then
-        scp -r ~/conf/bash ${HOST}:/root/
+        scp -r ~/conf/bash_linux ${HOST}:/root/
         if [ $? -ne 0 ]; then
-        	echo "scp bash 失败"
-            ssh ${HOST} "rm -fr bash"
+        	echo "scp bash_linux 失败"
+            ssh ${HOST} "rm -fr bash_linux"
             return 1
         fi
-        ssh ${HOST} "cd bash && ./link.sh"
+        ssh ${HOST} "cd bash_linux && ./link.sh"
     fi
 
     ssh ${HOST}
