@@ -9,6 +9,3 @@ fi
 if [ -f ~/.bash_funplus ]; then
     . ~/.bash_funplus
 fi
-
-
-alias sdnow="sudo shutdown -P 0"

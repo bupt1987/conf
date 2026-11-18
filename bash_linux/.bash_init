@@ -21,15 +21,6 @@ set -o vi
 
 tabs 4
 
-# Ctrl-S Ctrl-Q
-#stty stop undef
-#stty start undef
-
-# 输入法
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-
 PS1_HOST="\h";
 if [[ -n $SSH_CONNECTION ]];
 then

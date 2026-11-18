@@ -1,8 +1,5 @@
-.tmux.conf
-.inputrc
-.screenrc
-.gitconfig
 .bash_init
 .bash_user_alias
-.fonts.conf
+.gitconfig
+.inputrc
 .my.cnf
