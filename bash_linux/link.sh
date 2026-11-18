@@ -12,7 +12,7 @@ for file in ${list[@]}; do
   fi
 done
 
-if [[ ! $(cat ~/.bashrc | grep 'if [ -f ~/.bash_init ]; then') ]]; then
+if ! grep -Fqx 'if [ -f ~/.bash_init ]; then' ~/.bashrc 2>/dev/null; then
   # shellcheck disable=SC2129
   echo 'if [ -f ~/.bash_init ]; then' >>~/.bashrc
   echo '    . ~/.bash_init' >>~/.bashrc

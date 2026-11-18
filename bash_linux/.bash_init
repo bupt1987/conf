@@ -19,7 +19,10 @@ export ETCDCTL_API=3
 
 set -o vi
 
-tabs 4
+if [[ $- == *i* && -t 1 ]]; then
+    # Keep the cursor on the same line after setting tab stops.
+    printf '%s\r' "$(COLUMNS=$COLUMNS tabs 4)"
+fi
 
 PS1_HOST="\h";
 if [[ -n $SSH_CONNECTION ]];
@@ -70,7 +73,7 @@ git_propmt_dirty() {
 	echo " ] [ $file / $count"
 }
 
-PS1_TIME="\n\[\033[38;5;39m\]- \D{%I:%M:%S %p} -\[\033[00m\]"
+PS1_TIME="\[\033[38;5;39m\]- \D{%I:%M:%S %p} -\[\033[00m\]"
 PS1_USER="\u"
 
 PS1_HOST="\[\033[38;5;39m\]$PS1_USER@$PS1_HOST"
