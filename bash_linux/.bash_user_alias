@@ -1,0 +1,16 @@
+alias ..='cd ..'
+
+alias tail='((L=$LINES-8)); ((L=L>10?L:10)); tail -n $L'
+alias f='((L=$LINES-3)); ((L=L>10?L:10)); \tail -n $L -f'
+
+alias pss="ps aux | grep"
+
+alias df="df -h"
+alias du1="du --max-depth=1 -h"
+alias dus="du --max-depth=0 -h"
+
+alias ls="ls --color=auto"
+alias ll="ls -lh"
+alias la="ls -lA"
+alias l="ls -CF"
+alias lsd="\ls -l | \grep ^d"
